@@ -22,9 +22,9 @@ const reducer = (state = initialState, action) => {
 			text: action.todoText,
 			isComplete: false
 		});
+
 		return newState;
 	} else if (action.type == "TOGGLE_TODO") {
-
 		let todoToToggle = newState.todos[action.todoIndex];
 		todoToToggle.isComplete = !todoToToggle.isComplete;
 		return newState;

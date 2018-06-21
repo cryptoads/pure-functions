@@ -7,11 +7,17 @@ let initialState = {
 const reducer = (state = initialState, action) => {
 	let { type, counterIndex } = action;
 	if (type == "INCREMENT") {
-		state.counters[counterIndex]++;
-		return state;
+		var newState = {
+			counters: [...state.counters]
+		}
+		newState.counters[counterIndex]++;
+		return newState;
 	} else if (type == "ADD_COUNTER") {
-		state.counters.push(0);
-		return state;
+		var newState = {
+			counters: [...state.counters]
+		}
+		newState.counters.push(0)
+		return newState;
 	} else {
 		return state;
 	}
